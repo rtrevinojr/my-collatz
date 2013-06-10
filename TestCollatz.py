@@ -39,6 +39,33 @@ class TestCollatz (unittest.TestCase) :
         self.assert_(a[0] ==  1)
         self.assert_(a[1] == 10)
 
+    # Unit Test Cases
+	def test_read_1(self) :
+	    r = StringIO.StringIO("1 100 \n")
+	    a = [0, 0]
+	    b = collatz_read(r, a)
+	    self.assert_(b == True)
+	    self.assert_(a[0] == 1)
+	    self.assert_(b[1] == 100)
+
+	def test_read_2(self) :
+	    r = StringIO.StringIO("100 1000 \n")
+	    a = [0, 0]
+	    b = collatz_read(r, a)
+	    self.assert_(b == True)
+	    self.assert_(a[0] == 100)
+	    self.assert_(b[1] == 1000)
+
+	def test_read_3(self) :
+	    r = StringIO.StringIO("1000 2000 \n")
+	    a = [0, 0]
+	    b = collatz_read(r, a)
+	    self.assert_(b == True)
+	    self.assert_(a[0] == 1000)
+	    self.assert_(b[1] == 2000)
+	
+	   
+
     # ----
     # eval
     # ----
