@@ -5,7 +5,6 @@
 # ----
 
 import random
-import StringIO
 
 def random_gen() :
 	
@@ -14,7 +13,7 @@ def random_gen() :
 	while cnt < 1000 :
 	    
 	    i = random.randint(1, 1000)
-	    j = random.randint(i = i + 1, 1001)
+	    j = random.randint(i, 1001)
 	    out.write( str(i) + " " + str(j) + "\n" )
 	    cnt = cnt + 1
 
