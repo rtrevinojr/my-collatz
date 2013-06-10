@@ -95,6 +95,24 @@ class TestCollatz (unittest.TestCase) :
         collatz_print(w, 1, 10, 20)
         self.assert_(w.getvalue() == "1 10 20\n")
 
+    # Unit Test Cases for collatz_print
+
+    def test_print_1(self) :
+	w = StringIO.StringIO()
+	collatz_print(w, 100, 200, 125)
+	self.assert_(w.getvalue() == "100 200 125\n")
+
+    def test_print_2(self) :
+	w = StringIO.StringIO()
+	collatz_print(w, 201, 210, 89)
+	self.assert_(w.getvalue() == "201 210 89\n")
+
+    def test_print_3(self) :
+	w = StringIO.StringIO()
+	collatz_print(w, 900, 1000, 174)
+	self.assert_(w.getvalue() == "900 1000 174\n")
+
+
     # -----
     # solve
     # -----
