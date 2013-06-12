@@ -40,7 +40,24 @@ def collatz_eval (i, j) :
     assert i > 0
     assert j > 0
     # <your code>
-    v = 1
+    
+    v = 0
+    it = i
+    while i <= j :
+        cnt = 1
+        it =i
+	while it > 1 :
+	    if it % 2 == 0 :
+	      it = it/2
+	      cnt = cnt + 1
+	    else :
+	      it = 3 * it + 1
+	      cnt = cnt + 1
+	if cnt > v :
+	  v = cnt
+	i = i + 1
+
+    # v = 1
     assert v > 0
     return v
 
