@@ -43,16 +43,20 @@ def collatz_eval (i, j) :
     
     v = 0
     it = i
+    cache = [0] * 100000
     while i <= j :
         cnt = 1
         it =i
-	while it > 1 :
-	    if it % 2 == 0 :
-	      it = it/2
-	      cnt = cnt + 1
-	    else :
-	      it = 3 * it + 1
-	      cnt = cnt + 1
+	if cache[i] <= 0 :
+		while it > 1 :
+		    if it % 2 == 0 :
+		      it = it/2
+		      cnt = cnt + 1
+		    else :
+		      it = 3 * it + 1
+		      cnt = cnt + 1
+	if it == 1 :
+	  cache[i] = cnt
 	if cnt > v :
 	  v = cnt
 	i = i + 1
